@@ -1,4 +1,5 @@
 <?php
+// untuk menu yg sudah bisa login
 session_start();
 if (!isset($_SESSION['login'])) {
     header("Location: login.php");
@@ -6,6 +7,7 @@ if (!isset($_SESSION['login'])) {
 }
 ?>
 
+<!-- Untuk menampilkan halaman admin dengan pesan sambutan dan tombol logout. -->
 <!DOCTYPE html>
 <html lang="id">
 

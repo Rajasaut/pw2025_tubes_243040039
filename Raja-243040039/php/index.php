@@ -1,5 +1,7 @@
 <?php
 session_start();
+include "koneksi.php";
+
 $error = "";
 $success = "";
 
@@ -8,31 +10,35 @@ if (isset($_POST["register"])) {
     $password = $_POST["password"];
     $password2 = $_POST["password2"];
 
-    // Validasi kosong
+
     if ($username == "" || $password == "" || $password2 == "") {
         $error = "Semua kolom harus diisi!";
     } elseif ($password !== $password2) {
         $error = "Konfirmasi password tidak cocok!";
     } else {
-        // Cek apakah file user sudah ada
-        $file = "users.txt";
-        $users = file_exists($file) ? file($file, FILE_IGNORE_NEW_LINES) : [];
+        // Untuk ngcek username sudah ada atau belum
+        $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->store_result();
 
-        // Cek apakah username sudah digunakan
-        foreach ($users as $user) {
-            $data = explode("|", $user);
-            if ($data[0] == $username) {
-                $error = "Username sudah terdaftar!";
-                break;
+        if ($stmt->num_rows > 0) {
+            $error = "Username sudah terdaftar!";
+        } else {
+            // Simpan ke database
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+            $stmt->close();
+
+            $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+            $stmt->bind_param("ss", $username, $hash);
+            if ($stmt->execute()) {
+                $success = "Registrasi berhasil! Silakan login.";
+            } else {
+                $error = "Gagal menyimpan data, coba lagi.";
             }
         }
-
-        if (!$error) {
-            // Simpan username|password_hash ke file
-            $hash = password_hash($password, PASSWORD_DEFAULT);
-            file_put_contents($file, "$username|$hash\n", FILE_APPEND);
-            $success = "Registrasi berhasil! Silakan login.";
-        }
+        $stmt->close();
+        $conn->close();
     }
 }
 ?>
@@ -41,28 +47,27 @@ if (isset($_POST["register"])) {
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Halaman Registrasi</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <div class="login-container">
         <h2>Halaman Registrasi</h2>
 
-        <!-- Tampilkan pesan -->
         <?php if ($error) echo "<p class='error'>$error</p>"; ?>
         <?php if ($success) echo "<p class='success'>$success</p>"; ?>
 
         <form action="" method="post">
             <div class="untuk-input">
                 <label for="username">Username :</label>
-                <input type="text" name="username" id="username" required>
+                <input type="text" name="username" id="username" required />
                 <label for="password">Password :</label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" required />
                 <label for="password2">Konfirmasi Password :</label>
-                <input type="password" name="password2" id="password2" required>
+                <input type="password" name="password2" id="password2" required />
             </div>
             <button type="submit" name="register">Register</button>
         </form>

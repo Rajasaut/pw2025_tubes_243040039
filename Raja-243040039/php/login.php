@@ -1,54 +1,64 @@
 <?php
 session_start();
+include "koneksi.php";
+
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $file = "users.txt";
-    if (file_exists($file)) {
-        $users = file($file, FILE_IGNORE_NEW_LINES);
-        foreach ($users as $user) {
-            list($saved_user, $saved_hash) = explode("|", $user);
-            if ($username == $saved_user && password_verify($password, $saved_hash)) {
-                $_SESSION['login'] = $username;
-                // header("Location: admin.php");
-                header("Location: registrasi.php");
-                exit();
-            }
-        }
-    }
-    $error = "Username / Password salah";
-} else {
-    $error = "Username / Password salah";
-}
+    // Cek user di database
+    $stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->store_result();
 
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($hash);
+        $stmt->fetch();
+
+        // Verifikasi password
+        if (password_verify($password, $hash)) {
+            $_SESSION['login'] = $username;
+            header("Location: admin.php");
+            exit();
+        } else {
+            $error = "Username / Password salah";
+        }
+    } else {
+        $error = "Username / Password salah";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <div class="login-container">
-        <img src="" alt="" class="">
         <h2>Masuk ke Bengkel Motor Sosial</h2>
+
         <?php if ($error) {
             echo "<p class='error'>$error</p>";
         } ?>
-        <form method="POST">
+
+        <form method="POST" action="">
             <div class="untuk-input">
                 <label>Username :</label>
-                <input type="text" name="username" required><br>
+                <input type="text" name="username" required />
                 <label>Password :</label>
-                <input type="password" name="password" required><br>
+                <input type="password" name="password" required />
             </div>
             <button type="submit">Login</button>
         </form>
