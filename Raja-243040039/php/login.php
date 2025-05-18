@@ -13,7 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             list($saved_user, $saved_hash) = explode("|", $user);
             if ($username == $saved_user && password_verify($password, $saved_hash)) {
                 $_SESSION['login'] = $username;
-                header("Location: admin.php");
+                // header("Location: admin.php");
+                header("Location: registrasi.php");
                 exit();
             }
         }
