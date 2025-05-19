@@ -2,6 +2,7 @@
 session_start();
 include "koneksi.php";
 
+// ker nampilken pesan error atau sukses
 $error = "";
 $success = "";
 
@@ -16,7 +17,7 @@ if (isset($_POST["register"])) {
     } elseif ($password !== $password2) {
         $error = "Konfirmasi password tidak cocok!";
     } else {
-        // Untuk ngcek username sudah ada atau belum
+        // Untuk ngcek username/paswod sudah ada atau belum
         $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
@@ -25,11 +26,10 @@ if (isset($_POST["register"])) {
         if ($stmt->num_rows > 0) {
             $error = "Username sudah terdaftar!";
         } else {
-            // Simpan ke database
+            // Untuk Simpan ke database
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt->close();
-
-            $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+            $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)"); //--->buat menyimpan data baru ke database (userss)
             $stmt->bind_param("ss", $username, $hash);
             if ($stmt->execute()) {
                 $success = "Registrasi berhasil! Silakan login.";
@@ -54,6 +54,7 @@ if (isset($_POST["register"])) {
 </head>
 
 <body>
+    <!-- bagian resgistrasi -->
     <div class="login-container">
         <h2>Halaman Registrasi</h2>
 
