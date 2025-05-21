@@ -47,7 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="login-container">
-        <h2>Masuk ke Web Bengkel Motor Sosial</h2>
+        <h2>NgabdiYuk! </h2>
+        <h3>Platform Keren Buat yang Mau Jadi Relawan</h3>
         <?php if ($error) {
             echo "<p class='error'>$error</p>";
         } ?>

@@ -29,7 +29,7 @@ if (isset($_POST["register"])) {
             // Untuk Simpan ke database
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt->close();
-            $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)"); //--->buat menyimpan data baru ke database (userss)
+            $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
             $stmt->bind_param("ss", $username, $hash);
             if ($stmt->execute()) {
                 $success = "Registrasi berhasil! Silakan login.";
