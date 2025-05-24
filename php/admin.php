@@ -20,8 +20,9 @@ if (!isset($_SESSION['login'])) {
 
 <body>
     <div class="admin-container">
-        <h2>Selamat Datang Di Sistem Informasi Peluang Kerelawanan (SIPK)</h2>
-        <h3> Platform Keren Buat yang Mau Jadi Relawan</h3>
+        <h1>🌱</h1>
+        <h2>Selamat Datang Di Lingkungan dan Keberlanjutan</h2>
+        <h3> Platform Keren Buat yang Mau Menjaga Alam</h3>
         <img src="" alt="" class="">
         <a href="logout.php"><button>Logout</button></a>
     </div>

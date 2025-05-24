@@ -72,7 +72,6 @@ if (isset($_POST["register"])) {
             </div>
             <button type="submit" name="register">Register</button>
         </form>
-
         <p>Sudah punya akun? <a href="login.php">Login di sini</a></p>
     </div>
 </body>
