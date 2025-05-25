@@ -15,7 +15,7 @@ body {
   padding: 50px;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgb(82, 70, 18);
+  box-shadow: 0px 0px 10px rgb(82, 255, 39);
 }
 
 .logo {
@@ -68,4 +68,9 @@ button:hover {
 .success {
   color: #15ff00;
   font-weight: bold;
+}
+
+/* bagian navbar  */
+.navbar {
+  background: #15ff00;
 }
