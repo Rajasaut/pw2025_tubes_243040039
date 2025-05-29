@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-image: url(img/alam.jpg);
+  /* background-image: url(img/alam.jpg); */
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -68,9 +68,4 @@ button:hover {
 .success {
   color: #15ff00;
   font-weight: bold;
-}
-
-/* bagian navbar  */
-.navbar {
-  background: #15ff00;
 }

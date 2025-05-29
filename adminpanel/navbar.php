@@ -1,11 +1,3 @@
-<?php
-// untuk menu yg sudah bisa login
-session_start();
-if (!isset($_SESSION['login'])) {
-    header("Location: login.php");
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +6,7 @@ if (!isset($_SESSION['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar Boostep</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <style>
         /* bagian navbar  */
         .navbar {
@@ -66,16 +59,15 @@ if (!isset($_SESSION['login'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="../adminpanel">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="campaigns.php">campaigns</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="donations.php">donations</a>
                     </li>
-
-                    <a class="nav-link" href="logout.php">logout</a>
+                    <a class="nav-link" href="logout.php "><i class="bi bi-box-arrow-left"></i> logout</a>
                     <li class="nav-item">
 
                     </li>
@@ -84,9 +76,8 @@ if (!isset($_SESSION['login'])) {
         </div>
     </nav>
     <div class="bg">
-        <img src="img/bacground.jpg" alt="">
+        <!-- <img src="img/bacground.jpg" alt=""> -->
     </div>
-
 
 
 
