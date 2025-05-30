@@ -103,7 +103,7 @@ require "koneksi.php";
 
                         if ($insert) {
                             echo '<div class="alert alert-success mt-3">Campaign berhasil ditambahkan.</div>';
-                            echo '<meta http-equiv="refresh" content="2;url=campaigns.php">';
+                            echo '<meta http-equiv="refresh" content="3;url=campaigns.php">';
                         } else {
                             echo '<div class="alert alert-danger mt-3">Gagal menambahkan campaign: ' . mysqli_error($conn) . '</div>';
                         }
@@ -146,13 +146,13 @@ require "koneksi.php";
                             <td>{$row['status']}</td>
                             <td>
                                 <a href='edit_campaign.php?id={$row['id']}' class='btn btn-warning btn-sm'>Edit</a>
-                                <a href='hapus_campaign.php?id={$row['id']}' class='btn btn-danger btn-sm' onclick='return confirm(\"Yakin hapus?\")'>Hapus</a>
-                            </td>
+                                <a href='hapus_campaign.php? id={$row['id']}' class='btn btn-danger btn-sm' onclick='return confirm(\"Yakin hapus? \")'>Hapus</a>                            </td>
                             
                         </tr>";
                                 $no++;
                             }
                         }
+
                         ?>
                     </tbody>
                 </table>

@@ -97,14 +97,22 @@ $data = mysqli_fetch_array($query);
             WHERE id = '$id'");
 
                     if ($update) {
-                        echo '<div class="alert alert-success mt-3">Data berhasil diperbarui!</div>';
-                        echo '<meta http-equiv="refresh" content="2; url=campaigns.php">';
+                        echo '<div class="alert alert-success mt-2">Data berhasil diperbarui!</div>';
+                        echo '<meta http-equiv="refresh" content="3; url=campaigns.php">';
                     } else {
                         echo '<div class="alert alert-danger mt-3">Gagal memperbarui data: ' . mysqli_error($conn) . '</div>';
                     }
                 }
             }
 
+            // untuk menghapus data
+            function hapus($id)
+            {
+                global $conn;
+                mysqli_query($conn, "DELETE FROM campaigns WHERE id = $id");
+
+                return mysqli_affected_rows($conn);
+            }
 
 
             ?>
