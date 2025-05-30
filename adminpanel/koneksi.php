@@ -4,9 +4,11 @@ $conn = mysqli_connect('localhost', 'root', '', 'yayasan_sosial');
 //query isi tabel users,campains,samadonations
 $result = mysqli_query($conn, "SELECT * FROM users");
 
+
 // Untuk melihat campains dan donasions 
 $querycampaigns = mysqli_query($conn, "SELECT * FROM campaigns");
 $jumlahcampaigns = mysqli_num_rows($querycampaigns);
+
 
 $querydonations = mysqli_query($conn, "SELECT * FROM donations");
 $jumlahdonations = mysqli_num_rows($querydonations);
