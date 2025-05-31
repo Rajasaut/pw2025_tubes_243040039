@@ -12,6 +12,7 @@ if (isset($_POST["register"])) {
     $password2 = $_POST["password2"];
 
 
+
     if ($username == "" || $password == "" || $password2 == "") {
         $error = "Semua kolom harus diisi!";
     } elseif ($password !== $password2) {

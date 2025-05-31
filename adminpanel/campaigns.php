@@ -13,6 +13,7 @@ require "koneksi.php";
     <title>Campaigns</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         .container {
             padding-top: 100px;
@@ -33,29 +34,29 @@ require "koneksi.php";
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="../adminpanel" class="no-decoration">
-                        <i class="bi bi-house-fill text-muted"> Home</i>
+                        <i class="bi bi-house-fill text-muted "> Home</i>
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Campaigns</li>
             </ol>
         </nav>
 
-        <div class="container my-5 col-12 col-md-12">
+        <div class="my-4  col-12 col-md-12">
             <h3>Tambah Campaign Baru</h3>
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul</label>
                     <input type="text" id="judul" , id="target_donasi" , id="foto"
-                        class="form-control" name="judul" placeholder="Input nama judul">
+                        class="form-control" name="judul" placeholder="Input nama judul" required>
                 </div>
                 <div class="mb-3">
                     <label for="deskripsi" class="form-label">Deskripsi</label>
-                    <textarea class="form-control" name="deskripsi" rows="4" placeholder="Input Deskripsi"></textarea>
+                    <textarea class="form-control" name="deskripsi" rows="4" placeholder="Input Deskripsi" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="target_donasi" class="form-label">Target Donasi</label>
                     <input type="number" id="judul" , id="target_donasi" , id="foto"
-                        class="form-control" name="target_donasi" placeholder="Inpu dana donasi">
+                        class="form-control" name="target_donasi" placeholder="Inpu dana donasi" required>
                 </div>
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto</label>
@@ -96,7 +97,7 @@ require "koneksi.php";
                         $tmp = $_FILES['foto']['tmp_name'];
                         $folder = '../uploads/';
 
-                        move_uploaded_file($tmp, $folder . $foto);
+                        $target_directory = __DIR__ . '/../uploads/';
 
                         $insert = mysqli_query($conn, "INSERT INTO campaigns (user_id, judul, deskripsi, target_donasi, foto, status) 
                 VALUES ('$user_id', '$judul', '$deskripsi', '$target_donasi', '$foto', '$status')");
@@ -111,10 +112,7 @@ require "koneksi.php";
                 }
             }
 
-
             ?>
-
-
             <h3 class="mt-5">Daftar Campaign</h3>
             <div class="table-responsive mt-5">
                 <table class="table table-striped">
@@ -145,8 +143,8 @@ require "koneksi.php";
                             <td>Rp " . number_format($row['target_donasi'], 0, ',', '.') . "</td>
                             <td>{$row['status']}</td>
                             <td>
-                                <a href='edit_campaign.php?id={$row['id']}' class='btn btn-warning btn-sm'>Edit</a>
-                                <a href='hapus_campaign.php? id={$row['id']}' class='btn btn-danger btn-sm' onclick='return confirm(\"Yakin hapus? \")'>Hapus</a>                            </td>
+                                <a href='edit_campaign.php?id={$row['id']}' class='btn btn-warning btn-sm bi bi-pencil-square'  >  Edit</a>
+                                <a href='hapus_campaign.php? id={$row['id']}' class='btn btn-danger btn-sm bi bi-trash3' onclick='return confirm(\"Yakin hapus? \")'>  Hapus</a>                            </td>
                             
                         </tr>";
                                 $no++;

@@ -29,7 +29,7 @@ $data = mysqli_fetch_array($query);
     <?php require "navbar.php"; ?>
     <div class="container">
         <h2 class="mt-4">Edit Campaign</h2>
-        <div class="my-5 col-12 col-md-8">
+        <div class="my-5 col-12 col-md-12">
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul</label>

@@ -49,10 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="login-container">
-        <h2>Lingkungan & Keberlanjutan </h2>
-        <h3>🌳 Bersama kita tanam perubahan
-            <br>
-            💚 Aksi kecil hari ini, warisan hijau untuk esok
+        <h2>Yayasan peduli</h2>
+        <h3>Bersama kita dari yayasan untuk mereka yang membutuhkan.
         </h3>
         <?php if ($error) {
             echo "<p class='error'>$error</p>";
