@@ -144,8 +144,8 @@ require "koneksi.php";
                             <td>{$row['status']}</td>
                             <td>
                                 <a href='edit_campaign.php?id={$row['id']}' class='btn btn-warning btn-sm bi bi-pencil-square'  >  Edit</a>
-                                <a href='hapus_campaign.php? id={$row['id']}' class='btn btn-danger btn-sm bi bi-trash3' onclick='return confirm(\"Yakin hapus? \")'>  Hapus</a>                            </td>
-                            
+                                <a href='hapus_campaign.php? id={$row['id']}' class='btn btn-danger btn-sm bi bi-trash3' onclick='return confirm(\"Yakin hapus? \")'>  Hapus</a>                            
+                                </td>
                         </tr>";
                                 $no++;
                             }
