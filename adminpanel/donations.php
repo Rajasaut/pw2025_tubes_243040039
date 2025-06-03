@@ -92,9 +92,9 @@ function generateRandomString($length = 10)
                 <div>
                     <label for="status">Status</label>
                     <select name="status" id="status" class="form-control">
-                        <option value="pending">Pending</option>
-                        <option value="confirmed">Confirmed</option>
-                        <option value="rejected">Rejected</option>
+                        <option value="pending">⏳ Menunggu Konfirmasi</option>
+                        <option value="confirmed">✔️ Donasi Dikonfirmasi</option>
+                        <option value="rejected">❌ Donasi Ditolak</option>
                     </select>
                 </div>
                 <div>
