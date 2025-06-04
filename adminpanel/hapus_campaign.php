@@ -1,6 +1,6 @@
 <?php
 require "koneksi.php";
-require "edit_campaign.php";
+
 
 $id = $_GET["id"];
 
@@ -19,7 +19,7 @@ if ($dataCount > 0) {
 }
 
 
-if (hapus($id) > 0) {
+if (hapus_campaign($id) > 0) {
     echo "
         <script>
             alert('Data berhasil dihapus!');

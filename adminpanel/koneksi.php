@@ -18,3 +18,23 @@ $jumlahdonations = mysqli_num_rows($querydonations);
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
+
+// untuk menghapus data bagian  campaigns
+function hapus_campaign($id)
+{
+    global $conn;
+    mysqli_query($conn, "DELETE FROM campaigns WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
+
+// untuk menghapus data bagian donations 
+function hapus_donations($id)
+{
+    global $conn;
+    mysqli_query($conn, "DELETE FROM donations WHERE id = $id");
+
+
+    return mysqli_affected_rows($conn);
+}

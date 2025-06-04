@@ -75,12 +75,13 @@ function generateRandomString($length = 10)
                     <label for="status">Status</label>
                     <select name="status" id="status" class="form-control">
                         <option value="pending" <?= $data['status'] == 'pending' ? 'selected' : '' ?>>⏳ Menunggu Konfirmasi</option>
-                        <option value="confirmed" <?= $data['status'] == 'confirmed' ? 'selected' : '' ?>>✔️ Donasi Dikonfirmasi</option>
+                        <option value="confirmed" <?= $data['status'] == 'confirmed' ? 'selected' : '' ?>>✔ Donasi Dikonfirmasi</option>
                         <option value="rejected" <?= $data['status'] == 'rejected' ? 'selected' : '' ?>>❌ Donasi Ditolak</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
+                    <a href="donations.php" class="btn btn-secondary">Batal</a>
                 </div>
             </form>
 
@@ -117,7 +118,7 @@ function generateRandomString($length = 10)
                                 echo '<div class="alert alert-danger mt-3">File wajib bertipe jpg, jpeg, png, atau gif</div>';
                             } else {
                                 if (is_uploaded_file($_FILES["foto"]["tmp_name"])) {
-                                    if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_dir . $new)) {
+                                    if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_dir . $new_name)) {
                                         $queryUpdateFoto = mysqli_query($conn, "UPDATE donations SET foto='$new_name' WHERE id='$id'");
 
                                         if ($queryUpdateFoto) {
@@ -129,8 +130,6 @@ function generateRandomString($length = 10)
                                     } else {
                                         echo '<div class="alert alert-danger mt-3">Upload file gagal: gagal memindahkan file.</div>';
                                     }
-                                } else {
-                                    echo '<div class="alert alert-warning mt-3">Tidak ada file yang diupload secara sah.</div>';
                                 }
                             }
                         }

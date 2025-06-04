@@ -154,7 +154,6 @@ function generateRandomString($length = 10)
             ?>
 
         </div>
-
         <!-- List donations -->
         <div class="mb-5">
             <h3 class="mt-5">List Donations</h3>
@@ -189,7 +188,7 @@ function generateRandomString($length = 10)
                                     <td><?= $data['tanggal_donasi'] ?></td>
                                     <td>
                                         <?php if ($data['foto']) { ?>
-                                            <img src="uploads/<?= $data['foto'] ?>" width="100" alt="Bukti">
+                                            <img src="uploads/<?= $data['foto'] ?>" width="100" alt="_Foto">
                                         <?php } else {
                                             echo '-';
                                         } ?>

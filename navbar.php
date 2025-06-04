@@ -71,9 +71,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="donations.php">donations</a>
                     </li>
-                    <a class="nav-link" href="logout.php "><i class="bi bi-box-arrow-left"></i> logout</a>
-                    <li class="nav-item">
-
                     </li>
                 </ul>
             </div>

@@ -46,6 +46,8 @@ $data = mysqli_fetch_array($query);
                     <input type="number" name="target_donasi" id="target_donasi" class="form-control" value="<?= $data['target_donasi'] ?>">
                 </div>
 
+
+
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto</label>
                     <input type="file" name="foto" id="foto" class="form-control">
