@@ -67,3 +67,18 @@
   object-fit: cover;
   object-position: center;
 }
+
+.content-subscribe {
+  background-color: #025d74;
+}
+
+.content-subscribe a {
+  color: antiquewhite;
+}
+
+.banner-campaigns {
+  height: 47vh;
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.2)),
+    url("../adminpanel/img/banner1.jpg");
+  background-position: 40% 10%;
+}

@@ -56,20 +56,20 @@
 <body>
     <nav class="navbar navbar-expand-lg rounded-pill px-4 m-4 fixed-top ">
         <div class="container-fluid ">
-            <a class="navbar-brand" href="home">Organisasi Yayasan Sosial</a>
+            <a class="navbar-brand" href="index.php">Organisasi Yayasan Sosial</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../adminpanel">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="campaigns.php">campaigns</a>
+                        <a class="nav-link" href="tentang_kami.php">Tentang Kami</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="donations.php">donations</a>
+                        <a class="nav-link" href="donations.php">campaigns</a>
                     </li>
                     </li>
                 </ul>
