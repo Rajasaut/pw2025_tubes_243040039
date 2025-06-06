@@ -108,6 +108,7 @@ function generateRandomString($length = 10)
                 $status = isset($_POST['status']) ? htmlspecialchars($_POST['status']) : '';
                 $jumlah = isset($_POST['jumlah']) ? htmlspecialchars($_POST['jumlah']) : '';
 
+                // bagian untuk upload foto
                 $target_dir = "../image/";
                 $nama_file = basename($_FILES["foto"]["name"]);
                 $target_file = $target_dir . $nama_file;
@@ -117,40 +118,42 @@ function generateRandomString($length = 10)
                 $new_name = $random_name . "." . $imageFileType;
 
                 if ($campaign_id == 0 || $jumlah == '') {
-            ?>
-                    <div class="alert alert-danger mt-3">Bagian Judul Campaign dan Jumlah Wajib Diisi</div>
-                    <?php
+                    echo '<div class="alert alert-danger mt-3">Bagian Judul Campaign dan Jumlah Wajib Diisi</div>';
                 } else {
+                    $error = false;
+
                     if ($nama_file != '') {
                         if ($image_size > 500000) {
-                    ?>
-                            <div class="alert alert-danger mt-3">File tidak boleh lebih dari 500 KB</div>
-                        <?php
+                            echo '<div class="alert alert-danger mt-3">File tidak boleh lebih dari 500 KB</div>';
+                            $error = true;
                         } elseif (!in_array($imageFileType, ['jpg', 'png', 'gif'])) {
-                        ?>
-                            <div class="alert alert-danger mt-3">File wajib bertipe jpg, png, atau gif</div>
-                        <?php
+                            echo '<div class="alert alert-danger mt-3">File wajib bertipe jpg, png, atau gif</div>';
+                            $error = true;
                         } else {
-                            move_uploaded_file($_FILES["foto"]["tmp_name"], $target_dir . $new_name);
+                            // Perbaikan: tambahkan path lengkap ke file tujuan
+                            $upload_path = $target_dir . $new_name;
+                            if (!move_uploaded_file($_FILES["foto"]["tmp_name"], $upload_path)) {
+                                echo '<div class="alert alert-danger mt-3">Gagal menyimpan file gambar</div>';
+                                $error = true;
+                            }
                         }
                     } else {
                         $new_name = ''; // jika tidak upload gambar
                     }
 
-                    // Jalankan query insert
-                    $queryTambah = mysqli_query($conn, "INSERT INTO donations (user_id, campaign_id, jumlah, foto, status) VALUES ($user_id, $campaign_id, '$jumlah', '$new_name', '$status')");
+                    if (!$error) {
+                        $queryTambah = mysqli_query($conn, "INSERT INTO donations (user_id, campaign_id, jumlah, foto, status) VALUES ($user_id, $campaign_id, '$jumlah', '$new_name', '$status')");
 
-
-                    if ($queryTambah) {
-                        ?>
-                        <div class="alert alert-success mt-2">Donations berhasil tersimpan</div>
-                        <meta http-equiv="refresh" content="3; url=donations.php">
-            <?php
-                    } else {
-                        echo mysqli_error($conn);
+                        if ($queryTambah) {
+                            echo '<div class="alert alert-success mt-2">Donations berhasil tersimpan</div>';
+                            echo '<meta http-equiv="refresh" content="3; url=donations.php">';
+                        } else {
+                            echo mysqli_error($conn);
+                        }
                     }
                 }
             }
+
             ?>
 
         </div>

@@ -13,3 +13,57 @@
 .warna4 {
   background-color: #002a35;
 }
+
+.banner {
+  height: 85vh;
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.2)),
+    url("../adminpanel/img/banner1.jpg");
+}
+
+.highlighted-donations {
+  height: 250px;
+}
+
+.campaigns-sekolah {
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.2)),
+    url("../adminpanel/img/sekolah.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.campaigns-banjir {
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.2)),
+    url("../adminpanel/img/banjir.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.campaigns-roboh {
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.2)),
+    url("../adminpanel/img/roboh.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.no-decoration {
+  text-decoration: none;
+  color: white;
+}
+
+.no-decoration:hover {
+  color: #00ccff;
+}
+
+.text-target_donasi {
+  font-size: 20px;
+  color: #002a35;
+}
+
+.uploads-box {
+  height: 250px;
+}
+
+.uploads-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

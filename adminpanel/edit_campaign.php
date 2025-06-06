@@ -46,14 +46,13 @@ $data = mysqli_fetch_array($query);
                     <input type="number" name="target_donasi" id="target_donasi" class="form-control" value="<?= $data['target_donasi'] ?>">
                 </div>
 
-
-
+                <div>
+                    <label for="currentfoto">Foto Sekarang</label>
+                    <img src="../image/<?php echo $data['foto'] ?>" alt="" width="300px">
+                </div>
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto</label>
                     <input type="file" name="foto" id="foto" class="form-control">
-                    <?php if ($data['foto']) : ?>
-                        <small>Foto saat ini: <?= $data['foto'] ?></small>
-                    <?php endif; ?>
                 </div>
 
                 <div class="mb-3">
@@ -64,7 +63,7 @@ $data = mysqli_fetch_array($query);
                     </select>
                 </div>
 
-                <button type="submit" name="editBtn" class="btn btn-primary">Simpan Perubahan</button>
+                <button type="sub   mit" name="editBtn" class="btn btn-primary">Simpan Perubahan</button>
                 <a href="campaigns.php" class="btn btn-secondary">Batal</a>
             </form>
 
