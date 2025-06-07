@@ -115,9 +115,6 @@ $data = mysqli_fetch_array($query);
                 return mysqli_affected_rows($conn);
             }
 
-
-
-
             ?>
         </div>
     </div>

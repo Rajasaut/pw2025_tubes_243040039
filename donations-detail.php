@@ -30,7 +30,7 @@ $querycampaignsterkait = mysqli_query($conn, "SELECT judul, foto FROM campaigns 
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 mb-3">
+                <div class="col-md-5 mt-5 ">
                     <img src="./uploads/<?php echo $campaigns['foto']; ?>" class="w-100" alt="">
                 </div>
                 <div class="col-lg-6 my-5  offset-md-1">

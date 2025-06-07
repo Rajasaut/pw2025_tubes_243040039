@@ -80,7 +80,7 @@ $coundata = mysqli_num_rows($querycampaigns);
                     }
                     ?>
 
-                    <?php foreach ($all_campaigns as $c) { ?>
+                    <?php foreach ($all_campaignss as $c) { ?>
                         <div class="col-md-4 mb-4">
                             <div class="card h-100">
                                 <div class="uploads-box">
@@ -90,7 +90,7 @@ $coundata = mysqli_num_rows($querycampaigns);
                                     <h5 class="card-title"><?= htmlspecialchars($c['judul']) ?></h5>
                                     <p class="card-text text-truncate"><?= htmlspecialchars($c['deskripsi']) ?></p>
                                     <p class="card-text">Rp <?= number_format($c['target_donasi'], 0, ',', '.') ?></p>
-                                    <a href="donations-detail.php?judul=<?= urlencode($c['judul']) ?>" class=" btn btn-primary">Donasi Sekarang</a>
+                                    <a href="donations-detail.php?judul=<?= urlencode($c['judul']) ?>" class=" btn btn-primary">Lihat Detail</a>
                                 </div>
                             </div>
                         </div>
