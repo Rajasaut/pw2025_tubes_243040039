@@ -48,7 +48,7 @@ $data = mysqli_fetch_array($query);
 
                 <div>
                     <label for="currentfoto">Foto Sekarang</label>
-                    <img src="../image/<?php echo $data['foto'] ?>" alt="" width="300px">
+                    <img src="../uploads/<?php echo $data['foto'] ?>" alt="" width="300px">
                 </div>
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto</label>

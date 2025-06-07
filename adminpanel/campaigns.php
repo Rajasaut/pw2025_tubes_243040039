@@ -162,7 +162,7 @@ function generateRandomString($length = 20)
                     </thead>
                     <tbody>
                         <?php
-                        $querycampaigns = mysqli_query($conn, "SELECT * FROM campaigns ORDER BY created_at DESC");
+                        $querycampaigns = mysqli_query($conn, "SELECT * FROM campaigns ORDER BY dibuat_pada DESC");
                         $jumlahcampaigns = mysqli_num_rows($querycampaigns);
 
                         if ($jumlahcampaigns == 0) {

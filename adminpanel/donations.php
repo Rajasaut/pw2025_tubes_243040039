@@ -170,7 +170,7 @@ function generateRandomString($length = 10)
                             <th>Jumlah</th>
                             <th>Status</th>
                             <th>Tanggal Donasi</th>
-                            <th>Foto</th>
+                            <th>Bukti Foto</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>

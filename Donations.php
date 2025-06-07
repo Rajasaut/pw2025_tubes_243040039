@@ -1,5 +1,5 @@
 <?php
-require "koneksi.php";
+require "./adminpanel/koneksi.php";
 
 // Default: semua campaigns
 $querycampaigns = mysqli_query($conn, "SELECT * FROM campaigns");

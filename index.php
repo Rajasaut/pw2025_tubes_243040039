@@ -1,5 +1,6 @@
 <?php
-require "koneksi.php";
+require "./adminpanel/session.php";
+require "./adminpanel/koneksi.php";
 
 $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donasi, foto, status FROM campaigns LIMIT 9");
 
@@ -94,7 +95,7 @@ $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donas
                                 <p class="card-text text-truncate"><?= $data['deskripsi']; ?></p>
                                 <p class="card-text">Target: Rp <?= number_format($data['target_donasi'], 0, ',', '.'); ?></p>
                                 <a href="donations-detail.php?judul=<?php echo $data['judul']; ?>"
-                                    class="btn btn-primary">Donasi Sekarang</a>
+                                    class="btn btn-primary">Lihat Detail</a>
                             </div>
                         </div>
                     </div>

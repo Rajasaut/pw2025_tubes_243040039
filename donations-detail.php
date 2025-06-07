@@ -1,5 +1,5 @@
 <?php
-require "koneksi.php";
+require "./adminpanel/koneksi.php";
 
 $judul = htmlspecialchars($_GET['judul']);
 $querycampaigns = mysqli_query($conn, " SELECT * FROM campaigns WHERE judul='$judul'");
@@ -7,10 +7,6 @@ $campaigns = mysqli_fetch_array($querycampaigns);
 
 // bagian donasi terkait 
 $querycampaignsterkait = mysqli_query($conn, "SELECT judul, foto FROM campaigns WHERE foto!='{$campaigns['foto']}' LIMIT  4");
-
-
-
-
 ?>
 
 
@@ -45,7 +41,7 @@ $querycampaignsterkait = mysqli_query($conn, "SELECT judul, foto FROM campaigns 
                         target donasi kita Rp: <?php echo $campaigns['target_donasi']; ?>
                     </p>
                     <p class="fs-5">Status aktif atau selesai : <strong><?php echo $campaigns['status']; ?></strong></p>
-                    <button class=" btn btn-primary">Donasi Sekarang</button>
+                    <a href="kirim_donasi.php" class="nav-link"><button class=" btn btn-primary">Donasi Sekarang</button></a>
                 </div>
             </div>
         </div>
