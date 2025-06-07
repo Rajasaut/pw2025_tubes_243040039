@@ -85,13 +85,15 @@ $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donas
                     <div class="col-sm-6 col-md-4 mb-3">
                         <div class="card h-100">
                             <div class="uploads-box">
+
                                 <img src="./uploads/<?= $data['foto']; ?>" class="card-img-top" alt="Foto Campaign">
                             </div>
+
                             <div class="card-body">
                                 <h5 class="card-title"><?= $data['judul']; ?> </h5>
                                 <p class="card-text text-truncate"><?= $data['deskripsi']; ?></p>
                                 <p class="card-text">Target: Rp <?= number_format($data['target_donasi'], 0, ',', '.'); ?></p>
-                                <a href="donasi_sekarang.php?judul=<?php echo $data['judul']; ?>"
+                                <a href="donations-detail.php?judul=<?php echo $data['judul']; ?>"
                                     class="btn btn-primary">Donasi Sekarang</a>
                             </div>
                         </div>

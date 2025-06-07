@@ -90,7 +90,7 @@ $coundata = mysqli_num_rows($querycampaigns);
                                     <h5 class="card-title"><?= htmlspecialchars($c['judul']) ?></h5>
                                     <p class="card-text text-truncate"><?= htmlspecialchars($c['deskripsi']) ?></p>
                                     <p class="card-text">Rp <?= number_format($c['target_donasi'], 0, ',', '.') ?></p>
-                                    <a href="donasi_sekarang.php?judul=<?= urlencode($c['judul']) ?>" class="btn btn-primary">Donasi Sekarang</a>
+                                    <a href="donations-detail.php?judul=<?= urlencode($c['judul']) ?>" class=" btn btn-primary">Donasi Sekarang</a>
                                 </div>
                             </div>
                         </div>
