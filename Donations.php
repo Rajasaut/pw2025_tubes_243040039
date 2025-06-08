@@ -33,6 +33,7 @@ $coundata = mysqli_num_rows($querycampaigns);
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,12 +76,12 @@ $coundata = mysqli_num_rows($querycampaigns);
                     <?php
                     if ($coundata < 1) {
                     ?>
-                        <h3 class="text-center my-3">Tempa donasi yang anda cari belum ada di organisasi kami 🙏 </h3>
+                        <h3 class="text-center my-3">Tempat donasi yang anda cari belum ada di organisasi kami 🙏 </h3>
                     <?php
                     }
                     ?>
 
-                    <?php foreach ($all_campaignss as $c) { ?>
+                    <?php foreach ($all_campaigns as $c) { ?>
                         <div class="col-md-4 mb-4">
                             <div class="card h-100">
                                 <div class="uploads-box">

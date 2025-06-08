@@ -71,3 +71,5 @@ $querycampaignsterkait = mysqli_query($conn, "SELECT judul, foto FROM campaigns 
 </body>
 
 </html>
+
+status
