@@ -45,6 +45,7 @@ $coundata = mysqli_num_rows($querycampaigns);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/donations.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -53,14 +54,15 @@ $coundata = mysqli_num_rows($querycampaigns);
     <!-- bagian bannernya -->
     <div class="container-fluid banner-campaigns d-flex align-items-center ">
         <div class="container">
-            <h1 class="text-white">Campaigns</h1>
+            <h1 class="text-white" data-aos="fade-up"
+                data-aos-duration="3000">Berikan donasi terbaik 🤍</h1>
         </div>
     </div>
 
     <!-- body -->
     <div class="container py-5">
         <div class="row">
-            <div class="col-lg-3 mb-5">
+            <div class="col-lg-3 mb-5 ">
                 <h3>Judul Campaign</h3>
                 <ul class="list-group">
                     <?php foreach ($all_campaigns as $c) { ?>
@@ -71,7 +73,7 @@ $coundata = mysqli_num_rows($querycampaigns);
                 </ul>
             </div>
             <div class="col-lg-9">
-                <h2 class="text-center mb-3">Donations</h2>
+                <h2 class="text-center mb-3 ">Donations</h2>
                 <div class="row">
                     <?php
                     if ($coundata < 1) {
@@ -82,7 +84,7 @@ $coundata = mysqli_num_rows($querycampaigns);
                     ?>
 
                     <?php foreach ($all_campaigns as $c) { ?>
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4 mb-4" data-aos="flip-right" data-aos-duration="2000">
                             <div class="card h-100">
                                 <div class="uploads-box">
                                     <img src="./uploads/<?= htmlspecialchars($c['foto']) ?>" class="card-img-top" alt="Foto Campaign">
@@ -103,6 +105,11 @@ $coundata = mysqli_num_rows($querycampaigns);
 
     <!-- Untuk footer  -->
     <?php require "footer.php"; ?>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

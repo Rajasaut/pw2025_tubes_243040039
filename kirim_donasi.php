@@ -75,6 +75,7 @@ if (isset($_POST['simpan'])) {
     <meta charset="UTF-8">
     <title>Yayasan Sosial | Kirim Donasi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <style>
     .container {
@@ -125,6 +126,13 @@ if (isset($_POST['simpan'])) {
             <a href="donations.php" class="btn btn-secondary">Batal</a>
         </form>
     </div>
+
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

@@ -2,6 +2,15 @@
 require "./adminpanel/session.php";
 require "./adminpanel/koneksi.php";
 
+
+
+
+// untuk masuk ke user
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'user') {
+    header("Location: adminpanel/register.php");
+    exit();
+}
+
 $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donasi, foto, status FROM campaigns LIMIT 9");
 
 
@@ -18,7 +27,7 @@ $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donas
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/donations.css">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,7 +35,8 @@ $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donas
     <!-- bagian untuk banner -->
     <?php require "navbar.php"; ?>
     <div class="container-fluid banner d-flex align-items-center">
-        <div class="container text-center text-white">
+        <div class="container text-center text-white " data-aos="fade-up"
+            data-aos-duration="3000">
             <h1>Yayasan Sosial</h1>
             <h4> Anda dapat membatu kami membuat perbedaan dalam kehidupan masyarakat yang membutuhkan. <br>
                 Donasi anda dapat disalurkan melalui (informasi donasi)
@@ -48,17 +58,17 @@ $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donas
         <div class="container">
             <h3>campaigns</h3>
             <div class="row mt-5">
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-duration="2000">
                     <div class="highlighted-donations campaigns-sekolah d-flex justify-content-center align-items-center">
                         <h5 class="text-white"><a class="no-decoration" href="donations.php?campaigns=Sekolah"> sekolah di bawah jembatan</a></h5>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-duration="2000">
                     <div class="highlighted-donations campaigns-banjir d-flex justify-content-center align-items-center">
                         <h5 class="text-white"><a class="no-decoration" href="donations.php?campaigns=Banjir">banjir bandang</a></h5>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-duration="2000">
                     <div class="highlighted-donations campaigns-roboh d-flex justify-content-center align-items-center">
                         <h5 class="text-white"><a class="no-decoration" href="donations.php?campaigns=Runtuh">rumah runtuh</a></h5>
                     </div>
@@ -108,6 +118,11 @@ $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donas
     <!-- Untuk footer  -->
     <?php require "footer.php"; ?>
 
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 
