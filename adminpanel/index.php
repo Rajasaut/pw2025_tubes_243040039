@@ -4,7 +4,7 @@ require "koneksi.php";
 
 // untuk ketika login sebagai admin 
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header("Locations:register.php");
+    header("Locations:login.php");
     exit();
 }
 

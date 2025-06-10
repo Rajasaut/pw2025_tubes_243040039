@@ -6,8 +6,8 @@ require "./adminpanel/koneksi.php";
 
 
 // untuk masuk ke user
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'user') {
-    header("Location: adminpanel/register.php");
+if (!isset($_SESSION['role'])) {
+    header("Location: adminpanel/login.php");
     exit();
 }
 
@@ -58,17 +58,17 @@ $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donas
         <div class="container">
             <h3>campaigns</h3>
             <div class="row mt-5">
-                <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-duration="2000">
+                <div class="col-md-4 mb-3">
                     <div class="highlighted-donations campaigns-sekolah d-flex justify-content-center align-items-center">
                         <h5 class="text-white"><a class="no-decoration" href="donations.php?campaigns=Sekolah"> sekolah di bawah jembatan</a></h5>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-duration="2000">
+                <div class="col-md-4 mb-3">
                     <div class="highlighted-donations campaigns-banjir d-flex justify-content-center align-items-center">
                         <h5 class="text-white"><a class="no-decoration" href="donations.php?campaigns=Banjir">banjir bandang</a></h5>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-duration="2000">
+                <div class="col-md-4 mb-3">
                     <div class="highlighted-donations campaigns-roboh d-flex justify-content-center align-items-center">
                         <h5 class="text-white"><a class="no-decoration" href="donations.php?campaigns=Runtuh">rumah runtuh</a></h5>
                     </div>
