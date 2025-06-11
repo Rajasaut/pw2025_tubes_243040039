@@ -82,3 +82,7 @@
     url("../adminpanel/img/banner1.jpg");
   background-position: 40% 10%;
 }
+
+body {
+  background: linear-gradient(to right, #bec6d3, #c7e1f5);
+}

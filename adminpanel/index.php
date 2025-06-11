@@ -4,9 +4,10 @@ require "koneksi.php";
 
 // untuk ketika login sebagai admin 
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header("Locations:login.php");
+    header("Location: login.php");
     exit();
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -46,6 +47,12 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 
     .no-decoration {
         text-decoration: none;
+    }
+
+    body {
+        background: linear-gradient(135deg, #f0f4ff, #dbeafe);
+        min-height: 100vh;
+        padding-top: 40px;
     }
 </style>
 

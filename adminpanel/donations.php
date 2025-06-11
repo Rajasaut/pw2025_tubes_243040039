@@ -31,6 +31,12 @@ $jumlahdonations = mysqli_num_rows($query);
     .no-decoration {
         text-decoration: none;
     }
+
+    body {
+        background: linear-gradient(135deg, #f0f4ff, #dbeafe);
+        min-height: 100vh;
+        padding-top: 40px;
+    }
 </style>
 
 <body>

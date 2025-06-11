@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </script>
 
 <body>
+    <!-- bagian untuk banner -->
     <header>
         <h2 class="logo">Login</h2>
         <nav class="navigation">
@@ -82,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
 
-    <div class="login-container">
+    <div class="login-container active-popup">
         <!-- <img src="./img/logo1.png" alt=""> -->
         <h2 class="text-center">Login</h2>
         <span class="icon-close"><i class="bi bi-x"></i></span>

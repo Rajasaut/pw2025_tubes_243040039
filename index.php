@@ -2,12 +2,9 @@
 require "./adminpanel/session.php";
 require "./adminpanel/koneksi.php";
 
-
-
-
-// untuk masuk ke user
-if (!isset($_SESSION['role'])) {
-    header("Location: adminpanel/login.php");
+// Cek apakah sudah login dan role-nya user
+if (!isset($_SESSION['login']) || !isset($_SESSION['role']) || ($_SESSION['role'] !== 'user' && $_SESSION['role'] !== 'admin')) {
+    header("Location: ./adminpanel/login.php");
     exit();
 }
 
@@ -33,6 +30,7 @@ $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donas
 <body>
 
     <!-- bagian untuk banner -->
+
     <?php require "navbar.php"; ?>
     <div class="container-fluid banner d-flex align-items-center">
         <div class="container text-center text-white " data-aos="fade-up"
@@ -82,7 +80,9 @@ $querycampaigns = mysqli_query($conn, "SELECT id, judul, deskripsi, target_donas
     <div class="containe-fluid warna3 py-5">
         <div class="container">
             <h3 class="text-center">Tentang Organisa Kami</h3>
-            <p class="fs-5 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repudiandae voluptates architecto quis et aut molestiae illo nesciunt odit dignissimos magnam debitis minima blanditiis dolore atque quas eveniet, sed beatae eum praesentium quos quia amet repellat velit. Quos molestias doloribus sed eius aspernatur earum libero dicta accusamus? Unde tempora distinctio sint dolores quasi, neque veritatis perferendis ad inventore doloremque. Ratione rem, obcaecati autem quos minus nostrum accusamus voluptas inventore hic id reprehenderit natus est suscipit neque, molestias dolor maxime fugiat sit debitis! Tenetur natus ad autem repellendus eius pariatur quasi, earum dignissimos, eaque distinctio quae quia deleniti aperiam sint omnis!</p>
+            <p class="fs-5 mt-3">Yayasan Sosial kami adalah organisasi nirlaba yang berkomitmen untuk meningkatkan kesejahteraan masyarakat melalui berbagai program sosial, pendidikan, dan kemanusiaan. Didirikan dengan semangat kepedulian dan gotong royong, kami hadir untuk menjembatani kebaikan dari para donatur kepada mereka yang membutuhkan.
+                Dengan dukungan para relawan dan mitra, kami menyelenggarakan berbagai kegiatan seperti penggalangan dana untuk bantuan bencana, beasiswa pendidikan bagi anak-anak kurang mampu, distribusi sembako, serta program pemberdayaan ekonomi bagi keluarga prasejahtera.
+                Kami percaya bahwa perubahan besar dimulai dari langkah kecil. Oleh karena itu, kami mengajak seluruh elemen masyarakat untuk ikut berkontribusi dalam menciptakan kehidupan yang lebih adil dan sejahtera untuk semua.</p>
         </div>
     </div>
 

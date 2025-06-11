@@ -107,13 +107,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="donations.php">Donations</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.php">Dasbord</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class=" dropdown-menu">
+                            <li><a class="nav-link " href="../index.php"><i class="bi bi-person-circle "></i> Dasbord</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="nav-link" href="logout.php"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+                        </ul>
                     </li>
-                    <a class="nav-link" href="logout.php "><i class="bi bi-box-arrow-left"></i> logout</a>
-                    <li class="nav-item">
 
-                    </li>
                 </ul>
             </div>
         </div>
@@ -127,8 +133,7 @@
 
 
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 

@@ -78,53 +78,104 @@ if (isset($_POST['simpan'])) {
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <style>
-    .container {
-        padding-top: 100px;
-    }
-
     .no-decoration {
         text-decoration: none;
     }
+
+    body {
+        background: url('./adminpanel/img/Gambar-donasi1.jpg') no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 0;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.95);
+        /* Putih solid sedikit transparan */
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        margin: 4rem auto;
+        padding-top: 100px;
+    }
 </style>
 
+
 <body>
+    <!-- Form Donasi -->
+    <form action="" method="post" enctype="multipart/form-data">
+        <!-- isi form kamu seperti sebelumnya -->
+    </form>
+    </div>
+
     <?php require "navbar.php"; ?>
-    <div class="container">
-        <h2 class="text-center">Kirim Donation</h2>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Kirim Donasi (Kiri) -->
+            <div class="col-md-6">
+                <h2 class="text-start">Kirim Donasi</h2>
 
-        <?php if (!empty($error_msg)) : ?>
-            <div class="alert alert-danger mt-3"><?= $error_msg ?></div>
-        <?php endif; ?>
+                <?php if (!empty($error_msg)) : ?>
+                    <div class="alert alert-danger mt-3"><?= $error_msg ?></div>
+                <?php endif; ?>
 
-        <?php if (!empty($success_msg)) : ?>
-            <?= $success_msg ?>
-        <?php endif; ?>
+                <?php if (!empty($success_msg)) : ?>
+                    <?= $success_msg ?>
+                <?php endif; ?>
 
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="mb-3 mt-5">
-                <label for="campaign_id" class="form-label">Judul Campaign</label>
-                <select name="campaign_id" id="campaign_id" class="form-control" required>
-                    <option value="">Pilih satu</option>
-                    <?php while ($data = mysqli_fetch_array($querycampaigns)) { ?>
-                        <option value="<?= $data['id'] ?>"><?= htmlspecialchars($data['judul']) ?></option>
-                    <?php } ?>
-                </select>
+                <form action="" method="post" enctype="multipart/form-data" class="mt-4">
+                    <div class="mb-3">
+                        <label for="campaign_id" class="form-label">Judul Campaign</label>
+                        <select name="campaign_id" id="campaign_id" class="form-control" required>
+                            <option value="">Pilih satu</option>
+                            <?php while ($data = mysqli_fetch_array($querycampaigns)) { ?>
+                                <option value="<?= $data['id'] ?>"><?= htmlspecialchars($data['judul']) ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jumlah" class="form-label">Jumlah Donasi</label>
+                        <input type="number" class="form-control" name="jumlah" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="foto" class="form-label">Foto</label>
+                        <input type="file" name="foto" id="foto" class="form-control">
+                    </div>
+                    <button type="submit" name="simpan" class="btn btn-primary">Kirim</button>
+                    <a href="donations.php" class="btn btn-secondary">Batal</a>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="jumlah" class="form-label">Jumlah Donasi</label>
-                <input type="number" class="form-control" name="jumlah" required>
+
+            <!-- Transfer Donasi (Kanan) -->
+            <div class="col-md-6">
+                <div class="payment-info text-center">
+                    <h5>Transfer Donasi ke:</h5>
+                    <p><strong>BCA</strong> - 1234567890 a.n. Yayasan Sosial</p>
+                    <p><strong>DANA</strong> - 0813-9570-5998 Yayasan Sosial</p>
+                    <p><strong>BJB</strong> - 0987654321 b.a Yayasan Sosial</p>
+                    <img src="./adminpanel/img/kode-qr.jpg" alt="QR Code Donasi" class="img-fluid" style="max-width: 200px; border: 1px solid #ccc; padding: 8px; border-radius: 10px;">
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="foto" class="form-label">Foto</label>
-                <input type="file" name="foto" id="foto" class="form-control">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="email">Email</label>
-                <input type="text" class="form-control" name="email" required>
-            </div>
-            <button type="submit" name="simpan" class="btn btn-primary">Kirim</button>
-            <a href="donations.php" class="btn btn-secondary">Batal</a>
-        </form>
+        </div>
     </div>
 
 

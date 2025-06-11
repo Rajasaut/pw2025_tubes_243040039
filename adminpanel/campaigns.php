@@ -32,6 +32,12 @@ function generateRandomString($length = 20)
         .no-decoration {
             text-decoration: none;
         }
+
+        body {
+            background: linear-gradient(135deg, #f0f4ff, #dbeafe);
+            min-height: 100vh;
+            padding-top: 40px;
+        }
     </style>
 </head>
 

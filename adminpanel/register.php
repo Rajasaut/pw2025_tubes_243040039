@@ -81,7 +81,7 @@ if (isset($_POST["register"])) {
 
     </header>
     <!-- bagian resgistrasi -->
-    <div class="login-container">
+    <div class="login-container active-popup">
         <h2 class="text-center ">Halaman Registrasi</h2>
         <span class="icon-close"><i class="bi bi-x"></i></span>
         <?php if ($error) echo "<p class='error'>$error</p>"; ?>
@@ -90,17 +90,17 @@ if (isset($_POST["register"])) {
             <div class="untuk-input">
                 <span class="icon"><i class="bi bi-person-fill"></i></span>
                 <input type="text" name="username" id="username" required />
-                <label>Username :</label>
+                <label>Username </label>
             </div>
             <div class="untuk-input">
                 <span class="icon"><i class="bi bi-lock-fill"></i></span>
                 <input type="password" name="password" id="password" required />
-                <label>Password :</label>
+                <label>Password </label>
             </div>
             <div class="untuk-input">
                 <span class="icon"><i class="bi bi-lock-fill"></i></span>
                 <input type="password" name="password2" id="password2" required />
-                <label>Konfirmasi Password :</label>
+                <label>Konfirmasi Password </label>
             </div>
             <button type="submit" name="register" class="fw-bold">Register</button>
             <p class="text-center mt-1">Sudah punya akun? <a href="login.php" class="text-center">Login di sini</a></p>

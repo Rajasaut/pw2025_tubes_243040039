@@ -90,6 +90,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg rounded-pill px-4 m-4 fixed-top ">
         <div class="container-fluid ">
             <a class="navbar-brand" href="index.php">Organisasi Yayasan Sosial</a>
