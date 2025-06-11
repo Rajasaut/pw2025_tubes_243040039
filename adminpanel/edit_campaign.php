@@ -45,7 +45,7 @@ $data = mysqli_fetch_array($query);
 
                 <div class="mb-3">
                     <label for="deskripsi" class="form-label">Deskripsi</label>
-                    <textarea name="deskripsi" id="deskripsi" class="form-control" rows="4"><?= htmlspecialchars($data['deskripsi']) ?></textarea>
+                    <textarea name="deskripsi" id="deskripsi" class="form-control" rows="10"><?= htmlspecialchars($data['deskripsi']) ?></textarea>
                 </div>
 
                 <div class="mb-3">

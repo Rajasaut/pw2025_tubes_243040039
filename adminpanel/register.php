@@ -87,7 +87,7 @@ if (isset($_POST["register"])) {
         <?php if ($error) echo "<p class='error'>$error</p>"; ?>
         <?php if ($success) echo "<p class='success'>$success</p>"; ?>
         <form action="" method="post">
-            <div class="untuk-input">
+            <div class="untuk-input mt-3">
                 <span class="icon"><i class="bi bi-person-fill"></i></span>
                 <input type="text" name="username" id="username" required />
                 <label>Username </label>

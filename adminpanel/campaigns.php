@@ -65,7 +65,7 @@ function generateRandomString($length = 20)
                 </div>
                 <div class="mb-3">
                     <label for="deskripsi" class="form-label">Deskripsi</label>
-                    <textarea class="form-control" name="deskripsi" rows="4" placeholder="Input Deskripsi" required></textarea>
+                    <textarea class="form-control" name="deskripsi" rows="10" placeholder="Input Deskripsi" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="target_donasi" class="form-label">Target Donasi</label>
