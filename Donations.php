@@ -73,7 +73,7 @@ $coundata = mysqli_num_rows($querycampaigns);
                 </ul>
             </div>
             <div class="col-lg-9">
-                <h2 class="text-center mb-3 ">Donations</h2>
+                <h2 class="text-center mb-3 ">Donations…</h2>
                 <div class="row">
                     <?php
                     if ($coundata < 1) {
@@ -82,6 +82,13 @@ $coundata = mysqli_num_rows($querycampaigns);
                     <?php
                     }
                     ?>
+                    <form method="get" action="donations.php">
+                        <div class="input-group my-3">
+                            <input type="text" class="form-control" placeholder="mau donasi kemana"
+                                aria-label="Recipient’s username" aria-describedby="basic-addon2" name="keyword">
+                            <button type="submit" class="btn btn-primary text-white">Telusuri</button>
+                        </div>
+                    </form>
 
                     <?php foreach ($all_campaigns as $c) { ?>
                         <div class="col-md-4 mb-4" data-aos="flip-right" data-aos-duration="2000">

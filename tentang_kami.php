@@ -11,6 +11,29 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/donations.css">
 </head>
+<style>
+    .about-us {
+        background: #f5f5f5;
+    }
+
+    .about-us h2 {
+        color: #003566;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .about-us p {
+        color: #555;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .about-us img {
+        border-radius: 20px;
+        box-shadow: 0 4px 14px rgb(0 0 0 / 0.3);
+    }
+</style>
 
 <body>
     <?php require "navbar.php";  ?>
@@ -24,22 +47,46 @@
     </div>
 
     <!-- tentang kami -->
-    <div class="containe-fluid py-5">
-        <div class="container text-center fs-5">
-            <p class="text-start">
-                Yayasan Sosial kami adalah sebuah organisasi nirlaba yang didirikan dengan tujuan utama untuk menciptakan perubahan positif di tengah masyarakat. Kami bergerak dalam bidang kemanusiaan, pendidikan, kesehatan, dan pemberdayaan ekonomi dengan mengedepankan nilai-nilai kepedulian, keadilan, dan solidaritas. Keberadaan kami lahir dari kepedulian terhadap ketimpangan sosial dan keinginan untuk menjadi jembatan kebaikan antara mereka yang ingin membantu dan mereka yang membutuhkan uluran tangan.
-            </p>
-            <p class="text-start">
-                Kami menjalankan berbagai program sosial seperti pemberian bantuan sembako, layanan kesehatan gratis, pembangunan fasilitas umum, serta bantuan darurat untuk korban bencana alam. Selain itu, kami juga fokus pada pendidikan dengan menyediakan beasiswa dan perlengkapan sekolah bagi anak-anak dari keluarga kurang mampu. Kami percaya bahwa pendidikan adalah kunci utama untuk memutus rantai kemiskinan dan membuka jalan menuju masa depan yang lebih cerah.
-            </p>
-            <p class="text-start">
-                Yayasan ini terbuka bagi siapa saja yang ingin berkontribusi, baik secara materi, tenaga, maupun pemikiran. Dukungan dari donatur, relawan, dan mitra menjadi kekuatan besar dalam mewujudkan misi kami. Kami memastikan bahwa setiap bantuan yang disalurkan akan sampai tepat sasaran dan memberikan dampak nyata bagi penerimanya.
-            </p>
-            <p class="text-start">
-                Melalui kerja sama dengan berbagai pihak, kami berkomitmen untuk terus hadir di tengah masyarakat, membantu yang lemah, menyemangati yang putus asa, dan memberikan harapan bagi yang kehilangan arah. Kami percaya bahwa setiap tindakan kebaikan, sekecil apa pun, mampu membawa perubahan besar dalam kehidupan seseorang.
-            </p>
+    <section id="about-us" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Tentang Organisasi Kami</h2>
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="./adminpanel//img/sombako" alt="Organisasi Sosial" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <p>Yayasan Sosial kami adalah sebuah organisasi nirlaba yang didirikan dengan tujuan untuk menciptakan perubahan positif di tengah masyarakat. Kami bergerak dalam bidang kemanusiaan, pendidikan, kesehatan, dan pemberdayaan ekonomi, dengan mengedepankan nilai kepedulian, keadilan, dan solidaritas.</p>
+
+                    <p>Keberadaan kami lahir dari kepedulian terhadap kesenjangan sosial dan keinginan untuk menjadi jembatan kebaikan antara mereka yang ingin membantu dan mereka yang membutuhkan uluran tangan.</p>
+
+                    <p>Kami menjalankan berbagai program sosial seperti pemberian bantuan sembako, pelayanan kesehatan gratis, pembangunan ransel umum, dan bantuan darurat untuk korban bencana alam. Selain itu, kami juga fokus pada pendidikan dengan menyediakan beasiswa dan perlengkapan sekolah bagi anak-anak dari keluarga kurang mampu.</p>
+
+                    <p>Yayasan ini terbuka bagi siapa saja yang ingin berkontribusi, baik secara materi, tenaga, maupun pikiran. Dukungan dari donatur, relawan, dan mitra menjadi kekuatan besar dalam mewujudkan visi kami, yaitu memberikan dampak yang lebih luas dan lebih bermakna bagi penerimanya.</p>
+
+                    <p>Melalui kerja sama dengan berbagai pihak, kami juga berkomitmen untuk terus hadir di tengah masyarakat, membantu yang lemah, menyemangati yang putus asa, dan memberikan harapan bagi yang kehilangan arah. Dengan satu langkah kebaikan, hidup dapat lebih manusiawi dan lebih adil.</p>
+                </div>
+            </div>
+
+
+            <div class="row-6">
+                <p> Yayasan Sosial adalah organisasi sosial yang berdedikasi untuk membantu masyarakat yang membutuhkan. Kami berkomitmen untuk meningkatkan kualitas hidup masyarakat melalui program-program sosial, pendidikan, dan kesehatan.Yayasan Sosial adalah organisasi sosial yang berdedikasi untuk membantu masyarakat yang membutuhkan. Kami berkomitmen untuk meningkatkan kualitas hidup masyarakat melalui program-program sosial, pendidikan, dan kesehatan.
+
+                <h3>Misi Kami</h3>
+                <p>- Membantu masyarakat yang membutuhkan melalui program-program sosial dan kemanusiaan</p>
+                <p>- Meningkatkan kualitas hidup masyarakat melalui pendidikan dan pelatihan</p>
+
+                <p>- Mendorong partisipasi masyarakat dalam kegiatan sosial dan kemanusiaan</p>
+
+                <h3>Program Kami</h3>
+                <p>- Program Pendidikan: memberikan bantuan pendidikan kepada anak-anak yang membutuhkan</p>
+                <p>- Program Kesehatan: memberikan bantuan kesehatan kepada masyarakat yang membutuhkan</p>
+                <p>- Program Sosial: memberikan bantuan sosial kepada masyarakat yang membutuhkan</p>
+
+            </div>
         </div>
-    </div>
+    </section>
+
     <!-- Untuk footer  -->
     <?php require "footer.php"; ?>
 

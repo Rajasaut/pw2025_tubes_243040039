@@ -157,11 +157,11 @@ if (isset($_POST['simpan'])) {
                         <input type="text" class="form-control" name="email" required>
                     </div>
                     <div class="mb-3">
-                        <label for="foto" class="form-label">Foto</label>
+                        <label for="foto" class="form-label">Bukti Donasi</label>
                         <input type="file" name="foto" id="foto" class="form-control">
                     </div>
                     <button type="submit" name="simpan" class="btn btn-primary">Kirim</button>
-                    <a href="donations.php" class="btn btn-secondary">Batal</a>
+                    <a href="donations.php" class="btn btn-secondary">Kembali</a>
                 </form>
             </div>
 
