@@ -16,6 +16,12 @@ function generateRandomString($length = 10)
     return $randomString;
 }
 
+// misalnya $id berasal dari GET
+// $id = $_GET['id'];
+// $query = mysqli_query($conn, "SELECT judul FROM campaigns WHERE id=$id");
+
+// $data = mysqli_fetch_assoc($query);
+
 $error = false;
 $error_msg = '';
 $success_msg = '';

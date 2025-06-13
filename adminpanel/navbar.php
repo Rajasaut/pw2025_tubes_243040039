@@ -120,23 +120,26 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="nav-link" href="../logout.php"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#" onclick="window.print()">
+                                    <i class="bi bi-journal-plus"></i> Print
+                                </a>
+                            </li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="bg">
-        <!-- <img src="img/bacground.jpg" alt=""> -->
-    </div>
 
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 
